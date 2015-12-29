@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">中控</string>
+    <string name="teach_model">教学模式</string>
+    <string name="discuss_model">分组讨论</string>
+    <string name="exam_model">考试</string>
+    <string name="self_study_model">自习模式</string>
+    <string name="demonstrate">示范</string>
+    <string name="intercom">对讲</string>
+    <string name="monitor">监听</string>
+    <string name="setting">设置</string>
+    <string name="exit">退出</string>
+    <string name="speaker">音箱</string>
+    <string name="microphone">麦克风</string>
+    <string name="online">联机</string>
+    <string name="offline">脱离主机</string>
+    <string name="time">23:59</string>
+    <string name="hand_up">举手</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="local_set">本地设置</string>
+    <string name="net_set">网络设置</string>
+    <string name="seat_set_label">座位排列</string>
+    <string name="row_label">行</string>
+    <string name="column_label">列</string>
+    <string name="set_volumn_label">音量调节</string>
+    <string name="volumn_label">音量:</string>
+    <string name="net_set_label">设置网络</string>
+    <string name="notify_net">通知网段</string>
+    <string name="group_sum_2">2人组</string>
+    <string name="group_sum_4">４人组</string>
+    <string name="up">up</string>
+     <string name="demonstration_enough">最多只能4人同时示范</string>
+    <string name="online_alert">联机状态下中控不可用</string>
+    <string name="version">20151016</string>
+     <string name="network_off_alert">网络链接不正常,请检查网络！</string>
+    <string name="net_addr">192.168.1.15</string>
+
+    
+</resources>

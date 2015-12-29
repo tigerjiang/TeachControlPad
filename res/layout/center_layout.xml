@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg" >
+
+    <RelativeLayout
+        android:id="@+id/head_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/title"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" >
+
+        <TextView
+            android:id="@+id/time_status_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:gravity="center"
+            android:text="@string/time"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/student_status_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/name_background"
+            android:gravity="center"
+            android:text="@string/hand_up"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@+id/microphone"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:text="@string/version"/>
+
+        <Button
+            android:id="@+id/microphone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@+id/headset"
+            android:background="@drawable/mic_open_button"
+            android:gravity="center" />
+
+        <Button
+            android:id="@+id/headset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@+id/speaker"
+            android:background="@drawable/headset_open_button"
+            android:gravity="center"
+            android:visibility="gone"
+             />
+
+        <Button
+            android:id="@+id/speaker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@+id/machine_status_view"
+            android:background="@drawable/speaker_open_button"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/machine_status_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:text="@string/online"
+            android:textColor="@android:color/black" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/middle_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/head_bar_layout"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:background="#FFFFFF" >
+
+        <RelativeLayout
+            android:id="@+id/model_layout"
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/left_background" >
+
+            <ImageButton
+                android:id="@+id/teach_model"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_middle_height"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/model_button"
+                android:src="@drawable/teach_model" />
+
+            <ImageButton
+                android:id="@+id/demonstrate"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_middle_height"
+                android:layout_below="@+id/teach_model"
+                android:background="@drawable/button"
+                android:src="@drawable/demonstrate" />
+
+            <ImageButton
+                android:id="@+id/intercom"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_small_height"
+                android:layout_below="@+id/demonstrate"
+                android:background="@drawable/button"
+                android:src="@drawable/intercom" />
+
+            <ImageButton
+                android:id="@+id/monitor"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_small_height"
+                android:layout_below="@+id/intercom"
+                android:background="@drawable/button"
+                android:src="@drawable/monitor" />
+
+            <ImageView
+                android:id="@+id/diliver_teach"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_below="@+id/monitor"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/diliver"
+                android:src="@drawable/diliver" />
+
+            <ImageButton
+                android:id="@+id/discuss_model"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_middle_height"
+                android:layout_below="@+id/monitor"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/model_button"
+                android:src="@drawable/discuss_model" />
+
+            <ImageButton
+                android:id="@+id/group_sum_2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_small_height"
+                android:layout_below="@+id/discuss_model"
+                android:background="@drawable/button"
+                android:src="@drawable/group_sum_2"
+                android:visibility="gone" />
+
+            <ImageButton
+                android:id="@+id/group_sum_4"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_small_height"
+                android:layout_below="@+id/group_sum_2"
+                android:background="@drawable/button"
+                android:src="@drawable/group_sum_4"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/diliver_discuss"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@+id/group_sum_4"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/diliver" />
+
+            <ImageButton
+                android:id="@+id/self_study_model"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_middle_height"
+                android:layout_below="@+id/group_sum_4"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/model_button"
+                android:src="@drawable/self_study_model" />
+
+            <ImageButton
+                android:id="@+id/setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/setting_button" />
+        </RelativeLayout>
+
+        <GridView
+            android:id="@+id/seats_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/model_layout"
+            android:columnWidth="70dp"
+            android:horizontalSpacing="5dp"
+            android:listSelector="@drawable/listitem_selector"
+            android:numColumns="12"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="5dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/cover_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/head_bar_layout"
+        android:background="@drawable/bg"
+        android:visibility="gone" >
+        
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="50dp"
+            android:gravity="center"
+            android:id="@+id/error_message"
+            android:text="@string/online_alert"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+</RelativeLayout>
