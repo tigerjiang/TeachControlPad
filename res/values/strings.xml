@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">中控</string>
+    <string name="app_name">DClass</string>
     <string name="teach_model">教学模式</string>
     <string name="discuss_model">分组讨论</string>
     <string name="exam_model">考试</string>
