@@ -12,6 +12,7 @@ import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
@@ -490,6 +491,7 @@ public class ControllerActivity extends Activity implements OnClickListener,
         super.onDestroy();
         unregisterNetworkReceiver();
         mLibSiren.destroy();
+        android.os.Process.killProcess(android.os.Process.myPid());
     }
 
     private void initView() {
@@ -1072,6 +1074,7 @@ public class ControllerActivity extends Activity implements OnClickListener,
 
     private class MessageHandler extends Handler {
         public static final int UPDATE_NET_STATUS = 0;
+        public static final int UPDATE_EXIT_STATUS = 1;
 
         MessageHandler(Looper looper) {
             super(looper);
@@ -1100,6 +1103,9 @@ public class ControllerActivity extends Activity implements OnClickListener,
                     }
                     break;
 
+                case UPDATE_EXIT_STATUS:
+                	finish();
+                	break;
                 default:
                     break;
             }
@@ -1108,5 +1114,17 @@ public class ControllerActivity extends Activity implements OnClickListener,
 
     @Override
     public void onBackPressed() {
+    	DialogInterface.OnClickListener exitListener = new DialogInterface.OnClickListener(){
+
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				ControllerActivity.this.finish();
+			}
+    		
+    	};
+    	CommonUtil.showWarnDialog(ControllerActivity.this,"退出应用程序","确定退出应用程序?",exitListener);
+//    	super.onBackPressed();
     }
+    
+    
 }

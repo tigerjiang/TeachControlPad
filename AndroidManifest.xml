@@ -48,6 +48,7 @@
             android:launchMode="singleTop"
             android:persistent="true"
             android:stateNotNeeded="true"
+            android:screenOrientation="landscape"
             android:windowSoftInputMode="stateUnspecified|adjustPan" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
