@@ -36,6 +36,11 @@
     <string name="version">20151016</string>
      <string name="network_off_alert">网络链接不正常,请检查网络！</string>
     <string name="net_addr">192.168.1.15</string>
+    <string name="check_local"> 显示学生端</string>
+    <string name="check_remote"> 显示教师端</string>
+    <string name="exit_title">退出应用</string>
+     <string name="exit_message">是否退出应用?</string>
+    
 
     
 </resources>

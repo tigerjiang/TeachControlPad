@@ -98,6 +98,14 @@ public class CommandManager {
            mLibSiren.sendMessage(Command.formatMessage(setHeadsetMsg));
        }
        
+       //local/remote
+       public static void sendBroadcastMessage(String params) {
+           String setBroadcastMsg = "type:cmd" + "," + "receiver:all"
+                   + "," + "mode:" + Command.Modes.MODE_GLOBAL + "," + "command:"
+                   + Command.COMMANDS.COMMAND_GLOBAL_BROADCAST + "," + "group:g1"
+                   + "," + "param:"+params;
+           mLibSiren.sendMessage(Command.formatMessage(setBroadcastMsg));
+       }   
 
 
 	// demonstration

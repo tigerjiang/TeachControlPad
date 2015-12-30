@@ -40,8 +40,8 @@
             android:layout_marginRight="15dp"
             android:layout_toLeftOf="@+id/microphone"
             android:gravity="center"
-            android:textColor="@android:color/black"
-            android:text="@string/version"/>
+            android:text="@string/version"
+            android:textColor="@android:color/black" />
 
         <Button
             android:id="@+id/microphone"
@@ -62,8 +62,7 @@
             android:layout_toLeftOf="@+id/speaker"
             android:background="@drawable/headset_open_button"
             android:gravity="center"
-            android:visibility="gone"
-             />
+            android:visibility="gone" />
 
         <Button
             android:id="@+id/speaker"
@@ -186,6 +185,43 @@
                 android:layout_marginTop="15dp"
                 android:background="@drawable/model_button"
                 android:src="@drawable/self_study_model" />
+		<ImageView
+                android:id="@+id/diliver_group"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_above="@+id/broadcast_group"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/diliver"
+                android:src="@drawable/diliver" />
+            
+            <RadioGroup
+                android:id="@+id/broadcast_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/setting"
+                android:orientation="vertical"
+                android:layout_centerHorizontal="true" >
+
+                <RadioButton
+                    android:id="@+id/check_local"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/check_local"
+                    android:textColor="@color/white"
+                    android:textSize="8sp"
+                    android:minHeight="10dp"
+                    android:minWidth="10dp"
+                    android:maxHeight="10dp"
+                     />
+
+                <RadioButton
+                    android:id="@+id/check_remote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/check_remote"
+                    android:textColor="@color/white"
+                    android:textSize="8sp" />
+            </RadioGroup>
 
             <ImageButton
                 android:id="@+id/setting"
@@ -218,16 +254,16 @@
         android:layout_below="@+id/head_bar_layout"
         android:background="@drawable/bg"
         android:visibility="gone" >
-        
-          <TextView
+
+        <TextView
+            android:id="@+id/error_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
             android:layout_marginBottom="20dp"
             android:layout_marginRight="50dp"
             android:gravity="center"
-            android:id="@+id/error_message"
             android:text="@string/online_alert"
             android:textSize="16sp" />
     </RelativeLayout>
