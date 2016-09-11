@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/bg" >
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg"
+    >
 
     <RelativeLayout
         android:id="@+id/head_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_alignParentTop="true"
-        android:background="@drawable/title"
         android:paddingLeft="20dp"
-        android:paddingRight="20dp" >
+        android:paddingRight="20dp">
 
-        <TextView
+        <ImageView
             android:id="@+id/time_status_view"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
+            android:background="@drawable/logo"
             android:gravity="center"
-            android:text="@string/time"
-            android:textColor="@android:color/black" />
+            android:textColor="@color/primary_color"/>
 
         <TextView
             android:id="@+id/student_status_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:background="@drawable/name_background"
             android:gravity="center"
-            android:text="@string/hand_up"
-            android:textColor="@android:color/black" />
+            android:text="@string/mark"
+            android:textColor="@color/primary_color"
+            android:textSize="22sp"/>
 
         <TextView
             android:id="@+id/version"
@@ -41,7 +41,8 @@
             android:layout_toLeftOf="@+id/microphone"
             android:gravity="center"
             android:text="@string/version"
-            android:textColor="@android:color/black" />
+            android:textColor="@color/primary_color"
+            android:visibility="gone"/>
 
         <Button
             android:id="@+id/microphone"
@@ -51,7 +52,7 @@
             android:layout_marginRight="15dp"
             android:layout_toLeftOf="@+id/headset"
             android:background="@drawable/mic_open_button"
-            android:gravity="center" />
+            android:gravity="center"/>
 
         <Button
             android:id="@+id/headset"
@@ -62,7 +63,7 @@
             android:layout_toLeftOf="@+id/speaker"
             android:background="@drawable/headset_open_button"
             android:gravity="center"
-            android:visibility="gone" />
+            android:visibility="gone"/>
 
         <Button
             android:id="@+id/speaker"
@@ -70,9 +71,19 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginRight="15dp"
-            android:layout_toLeftOf="@+id/machine_status_view"
+            android:layout_toLeftOf="@+id/setting"
             android:background="@drawable/speaker_open_button"
-            android:gravity="center" />
+            android:gravity="center"/>
+
+        <ImageButton
+            android:id="@+id/setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@+id/machine_status_view"
+            android:background="@drawable/setting_button"
+            android:gravity="center"/>
 
         <TextView
             android:id="@+id/machine_status_view"
@@ -81,17 +92,18 @@
             android:layout_alignParentRight="true"
             android:gravity="center"
             android:text="@string/online"
-            android:textColor="@android:color/black" />
+            android:textColor="@color/primary_color"/>
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/middle_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/rl_bottom"
         android:layout_below="@+id/head_bar_layout"
         android:layout_centerInParent="true"
         android:layout_centerVertical="true"
-        android:background="#FFFFFF" >
+        >
 
         <RelativeLayout
             android:id="@+id/model_layout"
@@ -99,39 +111,111 @@
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:background="@drawable/left_background" >
+            android:background="@android:color/transparent">
 
-            <ImageButton
+
+            <LinearLayout
                 android:id="@+id/teach_model"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/button_middle_height"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/model_button"
-                android:src="@drawable/teach_model" />
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <ImageButton
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="@string/teach_model"
+                    android:textColor="@color/primary_color"
+                    android:textSize="@dimen/text_primary_size"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/arrow"/>
+            </LinearLayout>
+
+
+            <LinearLayout
                 android:id="@+id/demonstrate"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/button_middle_height"
                 android:layout_below="@+id/teach_model"
-                android:background="@drawable/button"
-                android:src="@drawable/demonstrate" />
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <ImageButton
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/persion"/>
+
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="@dimen/button_middle_height"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:text="@string/demonstrate"
+                    android:textColor="@color/primary_color"
+                    android:textSize="@dimen/text_second_size"/>
+            </LinearLayout>
+
+
+            <LinearLayout
                 android:id="@+id/intercom"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/button_small_height"
+                android:layout_height="@dimen/button_middle_height"
                 android:layout_below="@+id/demonstrate"
-                android:background="@drawable/button"
-                android:src="@drawable/intercom" />
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <ImageButton
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/duijiang"/>
+
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="@dimen/button_middle_height"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:text="@string/intercom"
+                    android:textColor="@color/primary_color"
+                    android:textSize="@dimen/text_second_size"/>
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/monitor"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/button_small_height"
+                android:layout_height="@dimen/button_middle_height"
                 android:layout_below="@+id/intercom"
-                android:background="@drawable/button"
-                android:src="@drawable/monitor" />
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/jianting"/>
+
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="@dimen/button_middle_height"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:text="@string/monitor"
+                    android:textColor="@color/primary_color"
+                    android:textSize="@dimen/text_second_size"/>
+            </LinearLayout>
+
 
             <ImageView
                 android:id="@+id/diliver_teach"
@@ -140,111 +224,204 @@
                 android:layout_below="@+id/monitor"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/diliver"
-                android:src="@drawable/diliver" />
+                android:src="@drawable/diliver"/>
 
-            <ImageButton
+            <LinearLayout
                 android:id="@+id/discuss_model"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/button_middle_height"
-                android:layout_below="@+id/monitor"
+                android:layout_below="@+id/diliver_teach"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/model_button"
-                android:src="@drawable/discuss_model" />
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <ImageButton
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="@string/discuss_model"
+                    android:textColor="@color/primary_color"
+                    android:textSize="@dimen/text_primary_size"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/arrow"/>
+            </LinearLayout>
+
+
+            <LinearLayout
                 android:id="@+id/group_sum_2"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/button_small_height"
+                android:layout_height="@dimen/button_middle_height"
                 android:layout_below="@+id/discuss_model"
-                android:background="@drawable/button"
-                android:src="@drawable/group_sum_2"
-                android:visibility="gone" />
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
 
-            <ImageButton
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/group_sum_2"/>
+
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="@dimen/button_middle_height"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:text="@string/group_sum_2"
+                    android:textColor="@color/primary_color"
+                    android:textSize="@dimen/text_second_size"
+                   />
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/group_sum_4"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/button_small_height"
+                android:layout_height="@dimen/button_middle_height"
                 android:layout_below="@+id/group_sum_2"
-                android:background="@drawable/button"
-                android:src="@drawable/group_sum_4"
-                android:visibility="gone" />
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/group_sum_4"/>
+
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="@dimen/button_middle_height"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:text="@string/group_sum_4"
+                    android:textColor="@color/primary_color"
+                    android:textSize="@dimen/text_second_size"
+                    />
+            </LinearLayout>
+
 
             <ImageView
                 android:id="@+id/diliver_discuss"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="5dp"
                 android:layout_below="@+id/group_sum_4"
                 android:layout_marginTop="5dp"
-                android:src="@drawable/diliver" />
+                android:background="@drawable/diliver"
+                android:src="@drawable/diliver"/>
 
-            <ImageButton
+            <LinearLayout
                 android:id="@+id/self_study_model"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/button_middle_height"
-                android:layout_below="@+id/group_sum_4"
+                android:layout_below="@+id/diliver_discuss"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/model_button"
-                android:src="@drawable/self_study_model" />
-		<ImageView
-                android:id="@+id/diliver_group"
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:layout_above="@+id/broadcast_group"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/diliver"
-                android:src="@drawable/diliver" />
-            
-            <RadioGroup
-                android:id="@+id/broadcast_group"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/setting"
-                android:orientation="vertical"
-                android:layout_centerHorizontal="true" >
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/check_local"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="@string/self_study_model"
+                    android:textColor="@color/primary_color"
+                    android:textSize="@dimen/text_primary_size"/>
+
+                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/check_local"
-                    android:textColor="@color/white"
-                    android:textSize="8sp"
-                    android:minHeight="10dp"
-                    android:minWidth="10dp"
-                    android:maxHeight="10dp"
-                     />
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/arrow"
+                    android:visibility="invisible"/>
+            </LinearLayout>
 
-                <RadioButton
-                    android:id="@+id/check_remote"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/check_remote"
-                    android:textColor="@color/white"
-                    android:textSize="8sp" />
-            </RadioGroup>
 
-            <ImageButton
-                android:id="@+id/setting"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/setting_button" />
         </RelativeLayout>
 
         <GridView
             android:id="@+id/seats_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/model_layout"
+            android:background="@drawable/view_cover"
             android:columnWidth="70dp"
             android:horizontalSpacing="5dp"
             android:listSelector="@drawable/listitem_selector"
             android:numColumns="12"
             android:stretchMode="columnWidth"
-            android:verticalSpacing="5dp" />
+            android:verticalSpacing="5dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/bottom_view"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_vertical"
+            android:paddingLeft="40dp"
+            android:text="@string/control_alert"
+            android:textColor="@color/primary_color"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/tv_broadcast"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/broadcast_group"
+            android:drawableLeft="@drawable/broadcast"
+            android:gravity="center"
+            android:text="@string/broadcast_alert"
+            android:textColor="@color/secondary_color"
+            android:textSize="16sp"/>
+
+        <RadioGroup
+            android:id="@+id/broadcast_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/check_local"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/check_selector"
+                android:checked="true"
+                android:gravity="center"
+                android:text="@string/check_local"
+                android:textColor="@color/secondary_color"
+                android:textSize="16sp"
+                />
+
+            <RadioButton
+                android:id="@+id/check_remote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:button="@drawable/check_selector"
+                android:gravity="center"
+                android:text="@string/check_remote"
+                android:textColor="@color/secondary_color"
+                android:textSize="16sp"/>
+        </RadioGroup>
     </RelativeLayout>
 
     <RelativeLayout
@@ -253,7 +430,7 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/head_bar_layout"
         android:background="@drawable/bg"
-        android:visibility="gone" >
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/error_message"
@@ -265,7 +442,7 @@
             android:layout_marginRight="50dp"
             android:gravity="center"
             android:text="@string/online_alert"
-            android:textSize="16sp" />
+            android:textSize="16sp"/>
     </RelativeLayout>
 
 </RelativeLayout>

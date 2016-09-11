@@ -40,6 +40,7 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.RelativeLayout;
@@ -56,14 +57,15 @@ public class ControllerActivity extends Activity implements OnClickListener,
 		OnCheckedChangeListener, OnItemSelectedListener, OnItemClickListener,
 		IUpdateSeatNo {
 	private static final String TAG = ControllerActivity.class.getSimpleName();
-	private ImageButton mSwitchTeachButton, mSwitchGroupButton,
+	private LinearLayout mSwitchTeachButton, mSwitchGroupButton,
 			mSwitchSelfButton;
-	private ImageButton mDemonButton, mIntercomButton, mMonitorButton;
+	private LinearLayout mDemonButton, mIntercomButton, mMonitorButton;
 	private ImageButton mSetButton;
 	private Button mSpeakerButton, mMicrophoneButton, mHeadSetButton;
 	private TextView mDeviceStateView, mTimeView, mStudentStateView,
 			mErrorMsgView, mVersionView;
-	private ImageButton mGroupSum2, mGroupSum4, mExitBtn;
+	private LinearLayout mGroupSum2, mGroupSum4;
+	private TextView mExitBtn;
 	private GridView mSeatView;
 	private String mReceiver;
 	private static StudentAdapter mAdapter;
@@ -99,10 +101,10 @@ public class ControllerActivity extends Activity implements OnClickListener,
 		@Override
 		public void handleMessage(Message msg) {
 			if (msg.what == 1) {
-				SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
-				String str = sdf.format(new Date());
-				mTimeView.setText(str);
-				mTimeHandler.sendEmptyMessageDelayed(1, 1000);
+//				SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+//				String str = sdf.format(new Date());
+//				mTimeView.setText(str);
+//				mTimeHandler.sendEmptyMessageDelayed(1, 1000);
 			}
 			if (msg.what == 2) {
 				CommandManager.sendSetOnlineMessage();
@@ -223,7 +225,7 @@ public class ControllerActivity extends Activity implements OnClickListener,
 		mSeatNo = CommonUtil.getSeatNo();
 		CommandManager.SetSeatNo(mSeatNo);
 		initView();
-		mTimeHandler.sendEmptyMessageDelayed(1, 1000);
+//		mTimeHandler.sendEmptyMessageDelayed(1, 1000);
 		// parseMessage(content);
 		// Log.d(TAG, "LibSiren initialisation");
 		try {
@@ -525,19 +527,19 @@ public class ControllerActivity extends Activity implements OnClickListener,
 		mSeatView.setOnItemClickListener(this);
 		mAdapter = new StudentAdapter(getApplicationContext(), mStudentList);
 		mSeatView.setAdapter(mAdapter);
-		mSwitchTeachButton = (ImageButton) findViewById(R.id.teach_model);
+		mSwitchTeachButton = (LinearLayout) findViewById(R.id.teach_model);
 		mSwitchTeachButton.setOnClickListener(this);
 		mSwitchTeachButton.setEnabled(false);
-		mSwitchGroupButton = (ImageButton) findViewById(R.id.discuss_model);
+		mSwitchGroupButton = (LinearLayout) findViewById(R.id.discuss_model);
 		mSwitchGroupButton.setOnClickListener(this);
-		mSwitchSelfButton = (ImageButton) findViewById(R.id.self_study_model);
+		mSwitchSelfButton = (LinearLayout) findViewById(R.id.self_study_model);
 		mSwitchSelfButton.setOnClickListener(this);
 
-		mDemonButton = (ImageButton) findViewById(R.id.demonstrate);
+		mDemonButton = (LinearLayout) findViewById(R.id.demonstrate);
 		mDemonButton.setOnClickListener(this);
-		mIntercomButton = (ImageButton) findViewById(R.id.intercom);
+		mIntercomButton = (LinearLayout) findViewById(R.id.intercom);
 		mIntercomButton.setOnClickListener(this);
-		mMonitorButton = (ImageButton) findViewById(R.id.monitor);
+		mMonitorButton = (LinearLayout) findViewById(R.id.monitor);
 		mMonitorButton.setOnClickListener(this);
 		mSetButton = (ImageButton) findViewById(R.id.setting);
 		mSetButton.setOnClickListener(this);
@@ -551,10 +553,10 @@ public class ControllerActivity extends Activity implements OnClickListener,
 		mHeadSetButton = (Button) findViewById(R.id.headset);
 		mHeadSetButton.setOnClickListener(this);
 		mDeviceStateView = (TextView) findViewById(R.id.machine_status_view);
-		mTimeView = (TextView) findViewById(R.id.time_status_view);
+//		mTimeView = (TextView) findViewById(R.id.time_status_view);
 		mStudentStateView = (TextView) findViewById(R.id.student_status_view);
-		mGroupSum2 = (ImageButton) findViewById(R.id.group_sum_2);
-		mGroupSum4 = (ImageButton) findViewById(R.id.group_sum_4);
+		mGroupSum2 = (LinearLayout) findViewById(R.id.group_sum_2);
+		mGroupSum4 = (LinearLayout) findViewById(R.id.group_sum_4);
 		mGroupSum2.setOnClickListener(this);
 		mGroupSum4.setOnClickListener(this);
 

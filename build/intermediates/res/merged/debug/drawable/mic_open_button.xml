@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true" android:drawable="@drawable/mic_open_sel">
+    </item>
+    <item android:state_focused="true" android:drawable="@drawable/mic_open_sel">
+    </item>
+    <item android:state_hovered="true" android:drawable="@drawable/mic_open_sel">
+    </item>
+    <item android:drawable="@drawable/mic_open_normal">  
+    </item>
+</selector><!-- From: file:/home/tiger/work/teachpad/TeachControlPad/res/drawable/mic_open_button.xml -->

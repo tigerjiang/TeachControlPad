@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/check_sel" android:state_checked="true"></item>
+    <item android:drawable="@drawable/check_def"></item>
+
+</selector><!-- From: file:/home/tiger/work/teachpad/TeachControlPad/res/drawable-mdpi/check_selector.xml -->

@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">DClass</string>
-    <string name="teach_model">教学模式</string>
+    <string name="teach_model">教师授课</string>
     <string name="discuss_model">分组讨论</string>
     <string name="exam_model">考试</string>
     <string name="self_study_model">自习模式</string>
@@ -40,7 +40,10 @@
     <string name="check_remote"> 显示教师端</string>
     <string name="exit_title">退出应用</string>
      <string name="exit_message">是否退出应用?</string>
-    
 
-    
+    <string name="mark">数\t\t字\t\t语\t\t言\t\t学\t\t习\t\t系\t\t统</string>
+
+    <string name="control_alert">学生端: 键盘F5音量+、F6音量-、F7举手、Shift+空格 = 中英文切换</string>
+    <string name="broadcast_alert">广播教学</string>
+    <string name="sear_no">A1</string>
 </resources>
