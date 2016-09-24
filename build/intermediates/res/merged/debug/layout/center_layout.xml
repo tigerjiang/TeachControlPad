@@ -220,11 +220,11 @@
             <ImageView
                 android:id="@+id/diliver_teach"
                 android:layout_width="match_parent"
-                android:layout_height="5dp"
+                android:layout_height="2dp"
                 android:layout_below="@+id/monitor"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/diliver"
-                android:src="@drawable/diliver"/>
+               />
 
             <LinearLayout
                 android:id="@+id/discuss_model"
@@ -311,11 +311,11 @@
             <ImageView
                 android:id="@+id/diliver_discuss"
                 android:layout_width="match_parent"
-                android:layout_height="5dp"
+                android:layout_height="2dp"
                 android:layout_below="@+id/group_sum_4"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/diliver"
-                android:src="@drawable/diliver"/>
+                />
 
             <LinearLayout
                 android:id="@+id/self_study_model"
@@ -356,8 +356,8 @@
             android:background="@drawable/view_cover"
             android:columnWidth="70dp"
             android:horizontalSpacing="5dp"
-            android:listSelector="@drawable/listitem_selector"
             android:numColumns="12"
+            android:listSelector="@android:color/transparent"
             android:stretchMode="columnWidth"
             android:verticalSpacing="5dp"/>
     </RelativeLayout>

@@ -12,6 +12,6 @@
 
     <dimen name="text_primary_size">20sp</dimen>
 
-    <dimen name="text_second_size">18sp</dimen>
+    <dimen name="text_second_size">16sp</dimen>
 
 </resources>

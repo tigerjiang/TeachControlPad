@@ -96,6 +96,7 @@ public class ControllerActivity extends Activity implements OnClickListener,
 	private ConnectivityManager mConnectivityManager;
 	private final NetworkStatusReceiver mNetworkReceiver = new NetworkStatusReceiver();
 	private static boolean mNetworkReceiverRegistered = false;
+	private static boolean mIsSpeakerOn = true;
 	private Handler mTimeHandler = new Handler() {
 
 		@Override
@@ -671,19 +672,21 @@ public class ControllerActivity extends Activity implements OnClickListener,
 			// TODO ...
 			break;
 		case R.id.speaker:
-			if (CommandManager.getSpeakerStatus() == 0) {
+			if (CommandManager.getSpeakerStatus() == 0 || mIsSpeakerOn) {
 				Log.d(TAG, "speaker enable");
 				CommandManager.closeSpeaker();
 				CommandManager.sendSetSpeakerMessage("off");
+
 				mSpeakerButton
 						.setBackgroundResource(R.drawable.speaker_close_button);
-			} else if (CommandManager.getSpeakerStatus() == 1) {
+			} else if (CommandManager.getSpeakerStatus() == 1 ||!mIsSpeakerOn) {
 				Log.d(TAG, "speaker disable");
 				CommandManager.openSpeaker();
 				CommandManager.sendSetSpeakerMessage("on");
 				mSpeakerButton
 						.setBackgroundResource(R.drawable.speaker_open_button);
 			}
+			mIsSpeakerOn = !mIsSpeakerOn;
 			// TODO ...
 			break;
 		case R.id.headset:
@@ -924,7 +927,22 @@ public class ControllerActivity extends Activity implements OnClickListener,
 			mAdapter.notifyDataSetChanged();
 		} else if (mCurrentCommand
 				.equals(Command.COMMANDS.COMMAND_TEACH_MONITOR)) {
+			restoreStudents();
+			boolean flag = sStudent.isMonitored();
+			if (!flag) {
+				sStudent.setMonitored(!flag);
+			} else {
+				for (int i = 0; i < mStudentList.size(); i++) {
+					if (mStudentList.get(i).isMonitored()) {
+						// Nothing to do..
+					} else {
+						mStudentList.get(i).setMonitored(false);
+					}
+				}
+			}
+			mAdapter.notifyDataSetChanged();
 			CommandManager.sendMonitorCommand(sStudent.getmSearNo());
+			mAdapter.notifyDataSetChanged();
 		}
 
 		Log.d(TAG, "click item " + sStudent.toString() + " current command "
@@ -969,7 +987,7 @@ public class ControllerActivity extends Activity implements OnClickListener,
 			TextView groupView = (TextView) contentView
 					.findViewById(R.id.groupView);
 			Student s = mStudents.get(position);
-			if (s.isOnline()) {
+			if (!s.isOnline()) {
 				stateView.setImageResource(R.drawable.online);
 				nameView.setTextColor(Color.BLACK);
 				if (Command.COMMANDS.COMMAND_TEACH_DEMONSTRATION
@@ -1030,6 +1048,7 @@ public class ControllerActivity extends Activity implements OnClickListener,
 			st.setGroupId(null);
 			st.setDemonStration(false);
 			st.setInterCom(false);
+			st.setMonitored(false);
 		}
 		mAdapter.notifyDataSetChanged();
 	}
