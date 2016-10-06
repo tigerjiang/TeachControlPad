@@ -7,4 +7,4 @@
     <item android:drawable="@android:color/transparent" android:state_enabled="true"></item>
     <item android:drawable="@android:color/transparent"></item>
 
-</selector><!-- From: file:/home/tiger/work/teachpad/TeachControlPad/res/drawable/model_button.xml -->
+</selector><!-- From: file:/home/mmclass/source/TeachPad/TeachControlPad/res/drawable/model_button.xml -->

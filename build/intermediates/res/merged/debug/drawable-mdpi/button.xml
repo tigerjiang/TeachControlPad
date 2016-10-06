@@ -5,4 +5,4 @@
     <item android:drawable="@drawable/button_sel" android:state_focused="true"></item>
     <item android:drawable="@android:color/transparent"></item>
 
-</selector><!-- From: file:/home/tiger/work/teachpad/TeachControlPad/res/drawable-mdpi/button.xml -->
+</selector><!-- From: file:/home/mmclass/source/TeachPad/TeachControlPad/res/drawable-mdpi/button.xml -->

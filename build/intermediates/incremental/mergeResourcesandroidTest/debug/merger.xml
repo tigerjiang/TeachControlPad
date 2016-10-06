@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/home/tiger/work/teachpad/TeachControlPad/src/androidTest/res"/><source path="/home/tiger/work/teachpad/TeachControlPad/build/generated/res/rs/androidTest/debug"/><source path="/home/tiger/work/teachpad/TeachControlPad/build/generated/res/resValues/androidTest/debug"/></dataSet><mergedItems/></merger>
+<merger version="3"><dataSet config="main"><source path="/home/mmclass/source/TeachPad/TeachControlPad/src/androidTest/res"/><source path="/home/mmclass/source/TeachPad/TeachControlPad/build/generated/res/rs/androidTest/debug"/><source path="/home/mmclass/source/TeachPad/TeachControlPad/build/generated/res/resValues/androidTest/debug"/></dataSet><mergedItems/></merger>

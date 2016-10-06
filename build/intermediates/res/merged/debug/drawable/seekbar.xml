@@ -3,4 +3,4 @@
     <item android:id="@+android:id/background" android:drawable="@drawable/seekbar_background" />  
 
     <item android:id="@+android:id/progress" android:drawable="@drawable/seekbar_progress" />  
-</layer-list>  <!-- From: file:/home/tiger/work/teachpad/TeachControlPad/res/drawable/seekbar.xml -->
+</layer-list>  <!-- From: file:/home/mmclass/source/TeachPad/TeachControlPad/res/drawable/seekbar.xml -->

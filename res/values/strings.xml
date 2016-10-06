@@ -46,4 +46,6 @@
     <string name="control_alert">学生端: 键盘F5音量+、F6音量-、F7举手、Shift+空格 = 中英文切换</string>
     <string name="broadcast_alert">广播教学</string>
     <string name="sear_no">A1</string>
+    <string name="setting_local_selected">本地设置</string>
+    <string name="setting_net_normal">网络设置</string>
 </resources>
