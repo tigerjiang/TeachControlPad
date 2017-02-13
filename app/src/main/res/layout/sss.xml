@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="320dp" 
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:background="@drawable/setting_background">
+
+    <Button
+        android:id="@+id/local_set"
+        android:layout_width="115dp"
+        android:layout_height="35dp"
+        android:background="@drawable/setting_local_selected" 
+            android:layout_marginLeft="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        
+            />
+
+        <Button
+            android:id="@+id/net_set"
+            android:layout_width="115dp"
+            android:layout_height="35dp"
+            android:background="@drawable/setting_net_normal" 
+            android:layout_marginTop="20dp"
+             android:layout_marginRight="25dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            />
+        
+       <RelativeLayout
+            android:id="@+id/net_set_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_below="@+id/local_set"
+                                    android:visibility="gone"
+             >
+
+            <TextView
+                android:id="@+id/net_set_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/net_set_label" 
+                android:textColor="@color/black"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"/>
+
+            <EditText
+                android:id="@+id/set_addr_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/net_set_label"
+                android:text="@string/net_addr" 
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                
+                />
+
+            <Button
+                android:id="@+id/notify_net"
+                style="@android:attr/spinnerDropDownItemStyle"
+            android:layout_width="110dp"
+            android:layout_height="35dp"
+                android:layout_below="@+id/set_addr_view"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/setting_noti_button" />
+        </RelativeLayout>
+           
+      <RelativeLayout
+            android:id="@+id/local_set_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/local_set"
+            
+            >
+
+            <TextView
+                android:id="@+id/seat_set_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/seat_set_label" 
+                android:textColor="@color/black"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                />
+
+            <Spinner
+                android:id="@+id/seat_row"
+                style="@android:attr/spinnerDropDownItemStyle"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/seat_set_label"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="20dp"
+                 />
+
+            <TextView
+                android:id="@+id/seat_row_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/seat_set_label"
+                android:layout_toRightOf="@+id/seat_row"
+                android:text="@string/row_label" 
+                android:textColor="@color/black"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="10dp"
+                />
+
+            <Spinner
+                android:id="@+id/seat_column"
+                style="@android:attr/spinnerDropDownItemStyle"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/seat_set_label"
+                android:layout_toRightOf="@+id/seat_row_label"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                 />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/seat_set_label"
+                android:layout_toRightOf="@+id/seat_column"
+                android:text="@string/column_label" 
+                android:textColor="@color/black"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="10dp"                />
+
+            <TextView
+                android:id="@+id/set_volumn_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/seat_row"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentLeft="true"
+                android:text="@string/set_volumn_label" 
+                android:textColor="@color/black"
+                android:layout_marginLeft="25dp"/>
+
+            <TextView
+                android:id="@+id/volumn_label"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_below="@+id/set_volumn_label"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="22dp"
+                android:background="@drawable/setting_volume"/>
+
+            <SeekBar
+                android:id="@+id/progress_bar"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/set_volumn_label"
+                android:layout_toRightOf="@+id/volumn_label"
+                android:minHeight="3dp"
+                android:maxHeight="3dp"
+                android:paddingLeft="10dip"
+                android:paddingRight="10dip"
+                android:thumbOffset="5dp" 
+                android:progressDrawable="@drawable/seekbar"
+                android:thumb="@drawable/thumb"    
+                android:layout_marginTop="20dp"
+                  />
+        </RelativeLayout>
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="115dp"
+            android:layout_height="35dp"
+            android:background="@drawable/setting_cancel_button" 
+            android:layout_marginLeft="25dp"
+        android:layout_marginBottom="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" />
+        
+       <Button
+            android:id="@+id/ok"
+            android:layout_width="115dp"
+            android:layout_height="35dp"
+            android:background="@drawable/setting_ok_button" 
+                        android:layout_marginRight="25dp"
+        android:layout_marginBottom="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true" />
+</RelativeLayout>

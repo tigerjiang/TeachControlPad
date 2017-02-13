@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DClass</string>
+    <string name="teach_model">教师授课</string>
+    <string name="discuss_model">分组讨论</string>
+    <string name="self_study_model">自习模式</string>
+    <string name="demonstrate">示范</string>
+    <string name="intercom">对讲</string>
+    <string name="monitor">监听</string>
+    <string name="online">联机</string>
+    <string name="offline">脱离主机</string>
+    <string name="hand_up">举手</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="seat_set_label">座位排列</string>
+    <string name="row_label">行</string>
+    <string name="column_label">列</string>
+    <string name="set_volumn_label">音量调节</string>
+    <string name="net_set_label">设置网络</string>
+    <string name="group_sum_2">2人组</string>
+    <string name="group_sum_4">４人组</string>
+    <string name="demonstration_enough">最多只能4人同时示范</string>
+    <string name="online_alert">联机状态下中控不可用</string>
+    <string name="version">20151016</string>
+     <string name="network_off_alert">网络链接不正常,请检查网络！</string>
+    <string name="net_addr">192.168.1.15</string>
+    <string name="check_local"> 显示学生端</string>
+    <string name="check_remote"> 显示教师端</string>
+    <string name="exit_title">退出应用</string>
+     <string name="exit_message">是否退出应用?</string>
+
+    <string name="mark">数\t\t字\t\t语\t\t言\t\t学\t\t习\t\t系\t\t统</string>
+
+    <string name="control_alert">学生端: 键盘F5音量+、F6音量-、F7举手、Shift+空格 = 中英文切换</string>
+    <string name="broadcast_alert">广播教学</string>
+    <string name="sear_no">A1</string>
+</resources>
